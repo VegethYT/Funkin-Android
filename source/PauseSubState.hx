@@ -17,7 +17,7 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song', #if mobile 'Chart Editor' #end, 'Exit to menu'];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
@@ -75,6 +75,11 @@ class PauseSubState extends MusicBeatSubstate
 		changeSelection();
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+
+		#if android
+		addVirtualPad(UP_DOWN, A_B);
+		addPadCamera();
+		#end
 	}
 
 	override function update(elapsed:Float)
@@ -107,6 +112,10 @@ class PauseSubState extends MusicBeatSubstate
 					close();
 				case "Restart Song":
 					FlxG.resetState();
+				#if mobile
+                                case "Chart Editor":
+                                        FlxG.switchState(new ChartingState());
+                                #end	
 				case "Exit to menu":
 					FlxG.switchState(new MainMenuState());
 			}
