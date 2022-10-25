@@ -26,7 +26,7 @@ class MusicBeatState extends FlxUIState
 	inline function get_controls():Controls
 		return PlayerSettings.player1.controls;
 
-		#if mobile
+	#if mobile
 	var mobileControls:MobileControls;
 	var virtualPad:FlxVirtualPad;
 	var trackedinputsMobileControls:Array<FlxActionInput> = [];
