@@ -104,6 +104,10 @@ class MainMenuState extends MusicBeatState
 		// NG.core.calls.event.logEvent('swag').send();
 
 		changeItem();
+		
+		#if mobile
+		addVirtualPad(UP_DOWN, A_B);
+		#end
 
 		super.create();
 	}
