@@ -171,6 +171,9 @@
 	<config:android permission="android.permission.ACCESS_WIFI_STATE" />
 	<config:android permission="android.permission.INTERNET" />
 
+	<!--Only-if-you-don't-have-hxCodec-->
+	<android target-sdk-version="29" />
+
 	<!-- _________________________________ Custom _______________________________ -->
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
