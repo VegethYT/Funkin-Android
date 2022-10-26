@@ -124,6 +124,15 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		#if mobile
+		if (virtualPad.buttonC.justPressed) {
+			#if mobile
+			removeVirtualPad();
+			#end
+			openSubState(new mobile.MobileControlsSubState());
+		}
+		#end
+
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
