@@ -79,7 +79,7 @@ class OptionsMenu extends MusicBeatState
 		}
 		#end
 
-		/* 
+		
 			if (controls.ACCEPT)
 			{
 				changeBinding();
@@ -96,7 +96,7 @@ class OptionsMenu extends MusicBeatState
 				if (controls.DOWN_P)
 					changeSelection(1);
 			}
-		 */
+		 
 	}
 
 	function waitingInput():Void
