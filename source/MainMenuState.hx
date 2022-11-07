@@ -105,18 +105,6 @@ class MainMenuState extends MusicBeatState
 
 		changeItem();
 
-		#if mobile
-		var tipText:FlxText = new FlxText(10, 14, 0, 'Press C to customize your android controls', 16);
-		tipText.setFormat(Paths.font('vcr.ttf'), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		tipText.borderSize = 2.4;
-		tipText.scrollFactor.set();
-		add(tipText);
-		#end
-		
-		#if mobile
-		addVirtualPad(UP_DOWN, A_B_C);
-		#end
-
 		super.create();
 	}
 
@@ -124,15 +112,6 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		#if mobile
-		if (virtualPad.buttonC.justPressed) {
-			#if mobile
-			removeVirtualPad();
-			#end
-			openSubState(new mobile.MobileControlsSubState());
-		}
-		#end
-
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
