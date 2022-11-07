@@ -37,15 +37,6 @@ class OptionsSubState extends MusicBeatSubstate
 	{
 		super.update(elapsed);
 
-                #if mobile
-		if (virtualPad.buttonC.justPressed) {
-			#if mobile
-			removeVirtualPad();
-			#end
-			openSubState(new mobile.MobileControlsSubState());
-		}
-		#end
-
 		if (controls.UP_P)
 			curSelected -= 1;
 
